@@ -1,0 +1,68 @@
+<html>
+    <!-- Use calculator CSS -->
+    <link rel="stylesheet" type="text/css" href="./calculator.css">
+
+    <!-- Example button to trigger calculator -->
+    <div id="div_mycalc">
+        <button type="button" id="tog_mycalc">CLICK ME</button>
+    </div>
+
+    <!-- Body of calculator (REQUIRED) -->
+    <div id='Calculator-hide' style="top: 20%; left: 40%;">
+        <div id="Calculator-header">
+            <input type='button' value='—' id='min-calc' onclick='minCalc();'/>
+            <b>Cam's Calculator</b>
+            <input type='button' value='📌' id='pin-calc' onclick='pinCalc();'/>
+            <input type='button' value='X' id='close-calc' onclick='closeCalc();' />
+        </div>
+        <table id='Calculator-table'>
+            <tr>
+                <td colspan='4'><div id='prev_eq'>&nbsp;</div></td>
+            </tr>
+            <tr>
+                <td colspan='4'><input id='calc_head_input' type='text' name='equation' placeholder='Enter Cool Equations Here...' value='0' /></td>
+            </tr>
+            <tr>
+                <td class='calc_op'><button type='button' class='calc_input' onclick="AdjCalc('%');" >%</button></td>
+                <td class='calc_op'><button type='button' class='calc_input' onclick="DelFroCalc(3);" >CE</button></td>
+                <td class='calc_op'><button type='button' class='calc_input' onclick="DelFroCalc(2);" >C</button></td>
+                <td class='calc_op'><button type='button' class='calc_input' onclick="DelFroCalc(1);" >⌫</button></td>
+            </tr>
+            <tr>
+                <td class='calc_op'><button type='button' class='calc_input' onclick="AdjCalc('1/x');" >1/x</button></td>
+                <td class='calc_op'><button type='button' class='calc_input' onclick="AdjCalc('x²');" >x²</button></td>
+                <td class='calc_op'><button type='button' class='calc_input' onclick="AdjCalc('²√x');" >²√x</button></td>
+                <td class='calc_op'><button type='button' class='calc_input' onclick="ExecCalc('÷');" >÷</button></td>
+            </tr>
+            <tr>
+                <td class='calc_num'><button type='button' class='calc_input' onclick="AppendToCalc('7');" >7</button></td>
+                <td class='calc_num'><button type='button' class='calc_input' onclick="AppendToCalc('8');" >8</button></td>
+                <td class='calc_num'><button type='button' class='calc_input' onclick="AppendToCalc('9');" >9</button></td>
+                <td class='calc_op'><button type='button' class='calc_input' onclick="ExecCalc('✕');" >✕</button></td>
+            </tr>
+            <tr>
+                <td class='calc_num'><button type='button' class='calc_input' onclick="AppendToCalc('4');" >4</button></td>
+                <td class='calc_num'><button type='button' class='calc_input' onclick="AppendToCalc('5');" >5</button></td>
+                <td class='calc_num'><button type='button' class='calc_input' onclick="AppendToCalc('6');" >6</button></td>
+                <td class='calc_op'><button type='button' class='calc_input' onclick="ExecCalc('-');" >-</button></td>
+            </tr>
+            <tr>
+                <td class='calc_num'><button type='button' class='calc_input' onclick="AppendToCalc('1');" >1</button></td>
+                <td class='calc_num'><button type='button' class='calc_input' onclick="AppendToCalc('2');" >2</button></td>
+                <td class='calc_num'><button type='button' class='calc_input' onclick="AppendToCalc('3');" >3</button></td>
+                <td class='calc_op'><button type='button' class='calc_input' onclick="ExecCalc('+');" >+</button></td>
+            </tr>
+            <tr>
+                <td class='calc_num'><button type='button' class='calc_input' onclick="AdjCalc('+/-');" >+/-</button></td>
+                <td class='calc_num'><button type='button' class='calc_input' onclick="AppendToCalc('0');" >0</button></td>
+                <td class='calc_num'><button type='button' class='calc_input' onclick="AdjCalc('.');" >.</button></td>
+                <td class='calc_eq'><button type='button' class='calc_input_eq' onclick="EqualCalc();" >=</button></td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- Include JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- Use JS for calculator -->
+    <script type="text/javascript" src="./calculator.js"></script>
+</html>
